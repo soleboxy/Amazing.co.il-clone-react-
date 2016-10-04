@@ -5,6 +5,7 @@
  */
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 p {
@@ -72,13 +73,9 @@ header {
   background: #0C7BB5;
   color: white;
 }
-header .container {
-  padding-top: 100px;
-  padding-bottom: 50px;
-}
 header img {
   display: block;
-  margin: 0 auto 20px;
+  margin: 0 auto;
 }
 header .intro-text .name {
   display: block;
@@ -92,10 +89,6 @@ header .intro-text .skills {
   font-weight: 300;
 }
 @media (min-width: 768px) {
-  header .container {
-    padding-top: 200px;
-    padding-bottom: 100px;
-  }
   header .intro-text .name {
     font-size: 4.75em;
   }
@@ -105,6 +98,7 @@ header .intro-text .skills {
 }
 .navbar-custom {
   background: #0C7BB5;
+  margin-bottom: 0;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -166,28 +160,34 @@ header .intro-text .skills {
     transition: padding 0.3s;
   }
   .navbar-custom .navbar-brand {
+    background: url('navbar-brand.png');
+    width: 171px;
+    display: block;
     font-size: 2em;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
   }
   .navbar-custom.affix {
+    width: 100%;
     padding: 10px 0;
+    top: 0;
+    z-index: 10;
   }
   .navbar-custom.affix .navbar-brand {
     font-size: 1.5em;
   }
 }
 section {
-  padding: 100px 0;
+  padding: 100px;
 }
 section h2 {
   margin: 0;
   font-size: 3em;
 }
 section.success {
-  background: #0C7BB5;
-  color: white;
+  background: url('shattered.png');
+  color: black;
 }
 @media (max-width: 767px) {
   section {
@@ -195,6 +195,11 @@ section.success {
   }
   section.first {
     padding-top: 75px;
+  }
+  .navbar-custom.affix {
+    width: 100%;
+    top: 0;
+    z-index: 10;
   }
 }
 #portfolio .portfolio-item {
@@ -502,4 +507,115 @@ fieldset[disabled] .btn-success.active {
 .portfolio-modal .modal-backdrop {
   opacity: 0;
   display: none;
+}
+div.motto {
+  width: 100%;
+}
+div.motto p.disclaimer {
+  text-align: center;
+}
+div.motto .motto-img {
+  height: 500px;
+}
+div.motto .centercol {
+  float: none;
+  margin: 0 auto;
+  margin-top: 3px;
+}
+div.motto .lbox img {
+  position: relative;
+  float: right;
+  margin-top: 130px;
+  margin-right: -101px;
+  z-index: 9;
+}
+div.motto .rbox img {
+  float: left;
+  margin-left: -100px;
+  margin-top: 240px;
+}
+section h2 {
+  color: #0C7BB5;
+}
+section .about_text {
+  margin-top: 30px;
+}
+.what_else_button {
+  display: inline-block;
+  background: #0C7BB5;
+  color: white;
+  height: 50px;
+  width: 60%;
+  font-size: 23px;
+  padding: 0 0 0 9px;
+  line-height: 49px;
+}
+.what_else_button:hover,
+.what_else_button:focus,
+.what_else_button:active {
+  color: white;
+  text-decoration: none;
+}
+.what_else_button i {
+  display: inline-block;
+  float: right;
+  background: #0c7bb5;
+  height: 50px;
+  width: 40px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+}
+.what_else_button:hover i {
+  text-decoration: none;
+  color: white;
+  background: #53bafd;
+}
+.fancy-block-dashing {
+  display: block;
+  height: 20px;
+  background: url('dash_bg.png') center center repeat-x;
+  background-color: #fff;
+  content: ' ';
+}
+.first-fancy-block:before {
+  display: block;
+  height: 20px;
+  background: url('dash_bg.png') center center repeat-x;
+  background-color: #fff;
+  content: ' ';
+}
+.first-fancy-block:after {
+  display: block;
+  height: 20px;
+  background: url('dash_bg.png') center center repeat-x;
+  background-color: #fff;
+  content: ' ';
+}
+.fancy-block:after {
+  display: block;
+  height: 20px;
+  background: url('dash_bg.png') center center repeat-x;
+  background-color: #fff;
+  content: ' ';
+}
+section.fancy-block:after {
+  display: block;
+  height: 20px;
+  background: url('dash_bg.png') center center repeat-x;
+  background-color: #fff;
+  content: ' ';
+  margin-bottom: -150px;
+}
+section.fancy-block {
+  margin-bottom: 70px;
+}
+.responsive_design {
+  background-image: url('shattered.png');
+}
+.full_service {
+  background-image: url('shattered2.png');
+}
+.notjust {
+  background-image: url('shattered2.png');
 }
