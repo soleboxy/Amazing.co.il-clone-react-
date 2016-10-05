@@ -21,13 +21,18 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + ".",
+    path: __dirname ,
     filename: "client.min.js"
   },
-  plugins: debug ? [new webpack.ProvidePlugin({$: "jquery",jQuery:"jquery", "window.jQuery": "jquery"})] : [
-    new webpack.ProvidePlugin({$: "jquery",jQuery:"jquery", "window.jQuery": "jquery"}),
+  plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+    new webpack.optimize.UglifyJsPlugin({ 
+        mangle: false, 
+        sourcemap: false,
+        compress:{
+            warnings: false
+        }
+    }),
   ],
 };
