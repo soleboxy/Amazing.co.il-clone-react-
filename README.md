@@ -15,5 +15,5 @@ if you want to play around with react as well just
 ```code
  npm run dev
 ```
-#clone live demo (thinking of making a jenkins for it or something)
+##clone live demo (thinking of making a jenkins for it or something)
 [amazing clone](http://52.90.95.187)
