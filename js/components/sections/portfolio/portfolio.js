@@ -10,7 +10,7 @@ export default class portfolio extends React.Component {
     super(props);
   }
 
-  render() {
+  render() {      
     return (
       <section id="portfolio" class="fancy-block">
         <div class="container">
@@ -21,12 +21,14 @@ export default class portfolio extends React.Component {
                 </div>
             </div>
             <div class="row">
-                <PortfolioItem id="portfolioModal1" thumb="img/portfolio/cabin.png" />
-                <PortfolioItem id="portfolioModal2" thumb="img/portfolio/cake.png" />
-                <PortfolioItem id="portfolioModal3" thumb="img/portfolio/circus.png" />
-                <PortfolioItem id="portfolioModal4" thumb="img/portfolio/game.png" />
-                <PortfolioItem id="portfolioModal5" thumb="img/portfolio/safe.png" />
-                <PortfolioItem id="portfolioModal6" thumb="img/portfolio/submarine.png" />
+               {
+                   this.props.clients.map(
+                      (client) => {
+                        return <PortfolioItem id={client['id']} thumb={client['thumb']} />;
+                      }
+
+                    )
+                }
             </div>
         </div>
 

@@ -13,7 +13,7 @@ import PortfolioModals from './sections/portfolio/modals';
 import Contact from './sections/contact';
 import Footer from './footer';
 import Scripts from './scripts'
-
+import axios from 'axios';
 
 export default class Layout extends React.Component {
   static propTypes = {
@@ -22,6 +22,20 @@ export default class Layout extends React.Component {
 
   constructor(props) {
     super(props);
+    
+    
+      this.state = {"clients": []};
+      
+      axios.get("psuedo_rest.json").then(
+          (response) => {
+            this.state = {...this.state, clients: response.data};
+            
+            this.setState({...this.state});
+          }
+      ).catch(function (error) {
+            console.log(error);
+      });
+    
   }
   
   render() {
@@ -34,10 +48,10 @@ export default class Layout extends React.Component {
         <NotJust />
         <ResponsiveDesign />
         <FullService />
-        <Portfolio />
+        <Portfolio clients={this.state.clients}/>
         <Contact />
         <Footer />
-        <PortfolioModals />
+        <PortfolioModals clients={this.state.clients} />
         <Scripts />
       </div>
     
