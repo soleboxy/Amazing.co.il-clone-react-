@@ -1,16 +1,20 @@
 // Layout.js
 
 import React from 'react';
-import $ from 'jquery';
-import Prologue from './Prologue';
+import Header from './header'
+import Prologue from './sections/Prologue';
 import Nbar from './nbar';
-import About from './about';
-import NotJust from './notjust';
-import ResponsiveDesign from './responsive';
-import FullService from './full_service';
-import Portfolio from './portfolio';
-import Contact from './contact';
+import About from './sections/about';
+import NotJust from './sections/notjust';
+import ResponsiveDesign from './sections/responsive';
+import FullService from './sections/full_service';
+import Portfolio from './sections/portfolio/portfolio';
+import PortfolioModals from './sections/portfolio/modals';
+import Contact from './sections/contact';
 import Footer from './footer';
+import Scripts from './scripts'
+
+
 export default class Layout extends React.Component {
   static propTypes = {
     name: React.PropTypes.string,
@@ -23,6 +27,7 @@ export default class Layout extends React.Component {
   render() {
     return (
       <div>
+        <Header />
         <Prologue />
         <Nbar />
         <About />
@@ -32,6 +37,8 @@ export default class Layout extends React.Component {
         <Portfolio />
         <Contact />
         <Footer />
+        <PortfolioModals />
+        <Scripts />
       </div>
     
     );

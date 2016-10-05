@@ -57,6 +57,11 @@ export default class Footer extends React.Component {
                 </div>
             </div>
         </div>
+        <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+            <a class="btn btn-primary" href="#page-top">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+        </div>
     </footer>
     );
   }

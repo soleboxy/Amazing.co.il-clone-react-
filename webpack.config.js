@@ -14,7 +14,8 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015', 'stage-0'],
-          plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties'],
+          plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties',
+          ],
         }
       }
     ]
@@ -23,7 +24,8 @@ module.exports = {
     path: __dirname + ".",
     filename: "client.min.js"
   },
-  plugins: debug ? [] : [
+  plugins: debug ? [new webpack.ProvidePlugin({$: "jquery",jQuery:"jquery", "window.jQuery": "jquery"})] : [
+    new webpack.ProvidePlugin({$: "jquery",jQuery:"jquery", "window.jQuery": "jquery"}),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
