@@ -14,7 +14,7 @@ export default class PortfolioItem extends React.Component {
   render() {
   
     return (
-      			<div class="col-sm-4 portfolio-item">
+      			<div class="col-sm-3 portfolio-item">
                     <a href={"#"+this.props.id} class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
