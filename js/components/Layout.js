@@ -12,7 +12,6 @@ import Portfolio from './sections/portfolio/portfolio';
 import PortfolioModals from './sections/portfolio/modals';
 import Contact from './sections/contact';
 import Footer from './footer';
-import Scripts from './scripts'
 import axios from 'axios';
 
 export default class Layout extends React.Component {
@@ -52,7 +51,6 @@ export default class Layout extends React.Component {
         <Contact />
         <Footer />
         <PortfolioModals clients={this.state.clients} />
-        <Scripts />
       </div>
     
     );

@@ -67,8 +67,7 @@ export default class Nbar extends React.Component {
 
 
   onClickCollapseHandler(event){
-    const collapsable_id = event.target.getAttribute("data-target");
-    const collapsable = document.getElementById("bs-example-navbar-collapse-1");
+    const collapsable = document.getElementById("ss-navbar-collapse");
     if (collapsable.classList.contains("in")){
          collapsable.classList.remove("in");
     }else{
@@ -87,28 +86,28 @@ export default class Nbar extends React.Component {
           
             <div class="navbar-header page-scroll">
                 <button type="button" onClick={this.onClickCollapseHandler.bind(this)} class="navbar-toggle " data-toggle="collapse"
-                 data-target="#bs-example-navbar-collapse-1"  >
+                 data-target="#ss-navbar-collapse"  >
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="#page-top"></a>
             </div>
 
            
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="ss-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
+                    <li onClick={this.onClickCollapseHandler.bind(this)} class="page-scroll">
                         <a href="#page-top">Home</a>
                     </li>
-                    <li class="page-scroll">
+                    <li onClick={this.onClickCollapseHandler.bind(this)} class="page-scroll">
                         <a href="#about">About</a>
                     </li>
-                    <li class="page-scroll">
+                    <li onClick={this.onClickCollapseHandler.bind(this)} class="page-scroll">
                         <a href="#portfolio">Portfolio</a>
                     </li>
-                    <li class="page-scroll">
+                    <li onClick={this.onClickCollapseHandler.bind(this)} class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li>
                 </ul>
