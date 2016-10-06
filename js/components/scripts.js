@@ -10,10 +10,10 @@ export default class Scripts extends React.Component {
   constructor(props) {
     super(props);
     this.scripts = [
-          "vendor/jquery/jquery.min.js",
-          "vendor/bootstrap/js/bootstrap.min.js",
-          "https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js",
-          "js/freelancer.min.js",
+          // "vendor/jquery/jquery.min.js",
+          // "vendor/bootstrap/js/bootstrap.min.js",
+          // "https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js",
+          // "js/freelancer.min.js",
 
     ];
   }

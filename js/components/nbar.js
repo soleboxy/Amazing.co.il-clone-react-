@@ -2,17 +2,53 @@
 import React from 'react';
 
 export default class Nbar extends React.Component {
+
   static propTypes = {
     name: React.PropTypes.string,
   };
 
   constructor(props) {
     super(props);
+    this.id = "mainNav";   
+    
+    // method for sticky navbar
+     this.checkPosition = () => {
+        let offsetTop =  this.navbar.offsetTop ? this.navbar.offsetTop : this.offsetTop;
+        this.offsetTop = offsetTop; 
+        let yoffset = window.pageYOffset;
+        let pin = () => {this.navbar.classList.add("affix");};
+        let unpin = () => {this.navbar.classList.remove("affix");};
+       
+        let shouldPin = yoffset > offsetTop;
+        if (shouldPin){
+            pin();
+        } else {
+            unpin();
+        }
+        this.checkPositionEventLoop =  setTimeout(this.checkPosition, 1);
+      }
   }
 
+
+  componentDidMount(){
+    //create poller here
+    this.navbar = document.getElementById(this.id);
+    this.checkPositionEventLoop =  setTimeout(this.checkPosition, 1)
+  }
+
+  componentWillUnmount(){
+    //remove poller here
+    clearTimeout(this.checkPositionEventLoop);
+  }
+
+
+
+ 
+
+ 
   render() {
     return (
-    <div id="mainNav" class="navbar navbar-default navbar-custom">
+    <div id={this.id} class="navbar navbar-default navbar-custom">
         <div class="container">
           
             <div class="navbar-header page-scroll">

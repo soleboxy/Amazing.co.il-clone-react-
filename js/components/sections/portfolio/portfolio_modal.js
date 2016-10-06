@@ -10,12 +10,29 @@ export default class PortfolioModal extends React.Component {
     super(props);
   }
 
+  onCloseHandle(event){
+  	let parent = event.target;
+  	let page_top = document.getElementById("page-top");
+  	if (parent.classList.contains("close-modal")){
+  		parent = parent.parentNode.parentNode;
+  	}else{
+	  	for (var i = 0; i < 6; i++){
+	  		parent = parent.parentNode;
+	  	}
+	}
+	let modal = parent;
+	modal.classList.remove('in');
+	modal.style.display = "none";
+	page_top.classList.remove('modal-open');
+  	
+  }
+
   render() {
   	const {img, id, title, client, date, service, description} = this.props;
     return (
       <div class="portfolio-modal modal fade" id={id} tabindex="-1" role="dialog" aria-hidden="true">
 				    <div class="modal-content">
-				        <div class="close-modal" data-dismiss="modal">
+				        <div onClick={this.onCloseHandle.bind(this)} class="close-modal" data-dismiss="modal">
 				            <div class="lr">
 				                <div class="rl">
 				                </div>
@@ -43,7 +60,7 @@ export default class PortfolioModal extends React.Component {
 				                                </strong>
 				                            </li>
 				                        </ul>
-				                        <button type="button" class="btn btn-default" data-dismiss="modal">
+				                        <button onClick={this.onCloseHandle.bind(this)} type="button" class="btn btn-default" data-dismiss="modal">
 				                        	<i class="fa fa-times"></i> 
 				                        	Close
 				                        </button>
