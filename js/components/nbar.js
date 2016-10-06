@@ -1,5 +1,6 @@
 //navbar.js
 import React from 'react';
+import jump from './jumper';
 
 export default class Nbar extends React.Component {
 
@@ -29,6 +30,8 @@ export default class Nbar extends React.Component {
       }
   }
 
+  jump
+
 
   componentDidMount(){
     //create poller here
@@ -41,18 +44,50 @@ export default class Nbar extends React.Component {
     clearTimeout(this.checkPositionEventLoop);
   }
 
+  smoothScroll(event){
+    event.preventDefault();
+    const easeInOutQuad = (t, b, c, d) => {
+          t /= d / 2
+          if(t < 1) return c / 2 * t * t + b
+          t--
+          return -c / 2 * (t * (t - 2) - 1) + b
+    }   
+    const target_id = event.target.href.split("#")[1];
+    const target = document.getElementById(target_id)
+    console.log(target);
+    window.jump = jump;
+    jump("#"+target_id, {
+      duration: 1000,
+      callback: undefined,
+      offser: 0,
+      easing: easeInOutQuad,
+      a11y: false
+    });
+  }
 
 
+  onClickCollapseHandler(event){
+    const collapsable_id = event.target.getAttribute("data-target");
+    const collapsable = document.getElementById("bs-example-navbar-collapse-1");
+    if (collapsable.classList.contains("in")){
+         collapsable.classList.remove("in");
+    }else{
+         collapsable.classList.add("in");
+    }
+   
+    console.log(collapsable_id);
+  }
  
 
  
   render() {
     return (
     <div id={this.id} class="navbar navbar-default navbar-custom">
-        <div class="container">
+        <div class="container" onClick={this.smoothScroll.bind(this)}>
           
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" onClick={this.onClickCollapseHandler.bind(this)} class="navbar-toggle " data-toggle="collapse"
+                 data-target="#bs-example-navbar-collapse-1"  >
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="#page-top"></a>

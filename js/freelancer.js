@@ -31,14 +31,14 @@
     });
 
     // Offset for Main Navigation
-    var main_nav = $('#mainNav');
-    var offz = main_nav.offset().top; 
-    console.log(offz);
-    main_nav.affix({
-        offset: {
-            top: offz 
-        }
-    })
+    // var main_nav = $('#mainNav');
+    // var offz = main_nav.offset().top; 
+    // console.log(offz);
+    // main_nav.affix({
+    //     offset: {
+    //         top: offz 
+    //     }
+    // })
 
     // Floating label headings for the contact form
     $(function() {
