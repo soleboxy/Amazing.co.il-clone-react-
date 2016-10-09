@@ -16,4 +16,4 @@ if you want to play around with react as well just
  npm run dev
 ```
 ##clone live demo (thinking of making a jenkins for it or something)
-[amazing clone](http://52.90.95.187)
+[amazing clone](http://mooz.net23.net/)
