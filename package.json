@@ -6,9 +6,9 @@
   "dependencies": {
     "babel-core": "^6.16.0",
     "npm": "^3.9.0",
-    "react": "^15.3.2",
+    "react": "^16.5.0",
     "react-bootstrap": "^0.30.5",
-    "react-dom": "^15.3.2"
+    "react-dom": "^16.5.0"
   },
   "homepage": "http://startbootstrap.com/template-overviews/freelancer",
   "author": "Start Bootstrap",
